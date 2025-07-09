@@ -3,9 +3,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { useAuthContext } from "./context/AuthContext";
 
-import SignUp from "./pages/Signup/signup";
-import Home from "./pages/Home/home";
-import Login from "./pages/Login/login";
+import SignUp from "./pages/Signup/SignUp";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
 import ActionLogBoard from "./pages/logTask/actionlog";
 
 function App() {
