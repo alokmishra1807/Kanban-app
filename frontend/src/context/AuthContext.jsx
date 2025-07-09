@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 
-export const backendUrl = "http://localhost:4000";
+export const backendUrl = "https://kanban-app-zku2.onrender.com";
 
 export const AuthContext = createContext();
 
