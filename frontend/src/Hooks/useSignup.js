@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import axios from 'axios'
-import { useAuthContext } from '../context/AuthContext';
+import { backendUrl, useAuthContext } from '../context/AuthContext';
 
 const useSignup = () => {
     const [Loading, setLoading] = useState(false);
@@ -21,7 +21,7 @@ const useSignup = () => {
     formData.append("confirmedPassword", confirmedPassword);
     formData.append("file", image); 
 
-    const res = await axios.post("http://localhost:4000/api/user/register", formData, {
+    const res = await axios.post(`${backendUrl}/api/user/register`, formData, {
   headers: {
     "Content-Type": "multipart/form-data",
   },

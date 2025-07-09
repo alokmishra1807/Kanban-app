@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import { useAuthContext } from '../context/AuthContext';
+import { backendUrl, useAuthContext } from '../context/AuthContext';
 
 const useLogin = () => {
  const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ const useLogin = () => {
     setLoading(true);
      try {
       const res = await axios.post(
-        "http://localhost:4000/api/user/login",
+        `${backendUrl}/api/user/login`,
         { email, password },
         {
           withCredentials: true, 
