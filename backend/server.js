@@ -17,7 +17,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://kanban-app-zku2.onrender.com", 
+    origin: "https://kanban-app-nu-pink.vercel.app/", 
     credentials: true,
   },
 });
@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://kanban-app-zku2.onrender.com", 
+    origin: "https://kanban-app-nu-pink.vercel.app/", 
     credentials: true,             
   })
 );
