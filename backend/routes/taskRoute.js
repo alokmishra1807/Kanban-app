@@ -6,11 +6,11 @@ import protectRoute from '../middleware/protectRoute.js';
 
 const router = express.Router();
 
-router.post('/create', protectRoute, createTask);
-router.put('/edit/:id', protectRoute, updateTask);
-router.delete('/delete/:id', protectRoute, deleteTask);
-router.get('/my-tasks', protectRoute, getUserTasks); 
-router.get('/all', protectRoute, getAllTasks);
+router.post('/create', createTask);
+router.put('/edit/:id',  updateTask);
+router.delete('/delete/:id', deleteTask);
+router.get('/my-tasks', getUserTasks); 
+router.get('/all', getAllTasks);
 
 
 export default router;
