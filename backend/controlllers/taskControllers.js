@@ -101,7 +101,7 @@ export const getUserTasks = async (req, res) => {
   try {
     const {id} = req.params;
     const tasks = await Task.find({ assignedUser: id });
-    alert(tasks);
+   
     res.status(200).json({ tasks });
   } catch (error) {
     console.error("Failed to fetch tasks:", error.message);
