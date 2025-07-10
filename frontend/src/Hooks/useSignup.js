@@ -19,11 +19,11 @@ const useSignup = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("confirmedPassword", confirmedPassword);
-    formData.append("file", image); 
+    
 
     const res = await axios.post(`${backendUrl}/api/user/register`, formData, {
   headers: {
-    "Content-Type": "multipart/form-data",
+    "Content-Type": "applacation/json",
   },
 });
 

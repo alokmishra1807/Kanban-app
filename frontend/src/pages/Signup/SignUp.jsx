@@ -8,7 +8,7 @@ const SignUp = () => {
     email: "",
     password: "",
     confirmedPassword: "",
-    image: ""
+    
   });
 
   const { Loading, signup } = useSignup();
@@ -70,15 +70,7 @@ const SignUp = () => {
             />
           </div>
 
-          <div>
-            <label className='block text-sm font-medium text-gray-700 mb-1'>Profile Image</label>
-            <input
-              type='file'
-              accept='image/*'
-              className='w-full px-3 py-1.5 border border-gray-300 rounded-md shadow-sm '
-              onChange={(e) => setInputs({ ...Inputs, image: e.target.files[0] })}
-            />
-          </div>
+          
 
           <div className="text-sm text-right">
             <Link to="/login" className='text-blue-600 hover:underline'>

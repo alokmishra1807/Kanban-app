@@ -99,7 +99,8 @@ export const getAllTasks = async (req, res) => {
 
 export const getUserTasks = async (req, res) => {
   try {
-    const tasks = await Task.find({ assignedUser: req.user._id });
+    const tasks = await Task.find({ assignedUser: req.user.id });
+    alert(tasks);
     res.status(200).json({ tasks });
   } catch (error) {
     console.error("Failed to fetch tasks:", error.message);

@@ -10,25 +10,7 @@ export const signup = async (req, res) => {
   try {
     const { fullName, email, password, confirmedPassword} = req.body;
    
-      const file = req.file;
-
-  if (!file) {
-    res.status(400).json({
-      message: "No file to upload 1",
-    });
-    return;
-  }
-    const fileBuffer = getBuffer(file);
-
-  if (!fileBuffer || !fileBuffer.content) {
-    res.status(400).json({
-      message: "Failed to generate buffer",
-    });
-    return;
-  }
-  const cloud = await cloudinary.v2.uploader.upload(fileBuffer.content, {
-    folder: "kanban-users",
-  });
+   
 
     if (password !== confirmedPassword) {
       return res.status(400).json({ error: "Passwords do not match" });
@@ -48,7 +30,7 @@ export const signup = async (req, res) => {
       fullName,
       email,
       password: hashedPassword,
-       profilePic: cloud.secure_url,
+       
     });
 
     if (newUser) {
