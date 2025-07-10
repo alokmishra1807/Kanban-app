@@ -13,10 +13,10 @@ export const createTask = async (req, res) => {
 
     await newTask.save();
 
-    // ✅ Emit event to all clients
+   
     req.io.emit("taskCreated", newTask);
 
-    // ✅ Log task creation
+  
     await ActionLog.create({
       user: req.user._id,
       actionType: "ADD",
@@ -99,7 +99,8 @@ export const getAllTasks = async (req, res) => {
 
 export const getUserTasks = async (req, res) => {
   try {
-    const tasks = await Task.find({ assignedUser: req.user.id });
+    const {id} = req.params;
+    const tasks = await Task.find({ assignedUser: id });
     alert(tasks);
     res.status(200).json({ tasks });
   } catch (error) {

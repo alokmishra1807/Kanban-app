@@ -19,7 +19,7 @@ const TaskBoard = () => {
   const [editData, setEditData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { setAuthUser } = useAuthContext();
+  const { authUser,setAuthUser } = useAuthContext();
   const navigate = useNavigate();
 
   const fetchTasks = async () => {
@@ -42,7 +42,7 @@ const TaskBoard = () => {
 
   const fetchMyTasks = async () => {
     try {
-      const res = await axios.get(`${backendUrl}/api/task/my-tasks`);
+      const res = await axios.get(`${backendUrl}/api/task/my-tasks/${authUser._id}`);
       setCurrentUserTasks(Array.isArray(res.data.tasks) ? res.data.tasks : []);
     } catch (err) {
       console.error("Failed to fetch assigned tasks", err);
